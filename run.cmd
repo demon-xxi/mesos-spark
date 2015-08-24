@@ -1,0 +1,1 @@
+curl -X POST http://172.31.52.231:8080/v2/apps -d @MesosClusterDispatcher.json  -H "Content-type: application/json"
