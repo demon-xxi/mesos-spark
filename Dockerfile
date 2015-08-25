@@ -27,5 +27,5 @@ RUN mkdir /opt/spark && \
     curl https://s3.amazonaws.com/spark-files-repo/spark-1.5.0-SNAPSHOT-bin-custom-spark.tgz \
     | tar -xzC /opt
 ENV SPARK_HOME /opt/spark
-ENV MESOS_NATIVE_JAVA_LIBRARY /usr/local/lib/libmesos
+ENV MESOS_NATIVE_JAVA_LIBRARY /usr/local/lib/libmesos.so
 WORKDIR /opt/spark
