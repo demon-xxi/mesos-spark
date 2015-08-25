@@ -28,3 +28,4 @@ RUN mkdir /opt/spark && \
     | tar -xzC /opt
 ENV SPARK_HOME /opt/spark
 ENV MESOS_NATIVE_JAVA_LIBRARY /usr/local/lib/libmesos
+WORKDIR /opt/spark
