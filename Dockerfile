@@ -24,7 +24,7 @@ RUN apt-get update && \
     apt-get install -y python libnss3 openjdk-7-jre-headless curl
 
 RUN mkdir /opt/spark && \
-    curl https://s3.amazonaws.com/spark-files-repo/spark-1.4.1-bin-hadoop2.4.tar.gz \
+    curl https://s3.amazonaws.com/spark-files-repo/spark-1.5.0-SNAPSHOT-bin-custom-spark.tgz \
     | tar -xzC /opt
 ENV SPARK_HOME /opt/spark
 ENV MESOS_NATIVE_JAVA_LIBRARY /usr/local/lib/libmesos
