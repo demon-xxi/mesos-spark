@@ -1,5 +1,5 @@
 {
-  "id": "spark-1-4-1",
+  "id": "spark-1-5-0",
   "cpus": 1,
   "mem": 1024,
   "instances": 1,
@@ -11,11 +11,11 @@
     "SPARK_USER": "root",
     "APPLICATION_WEB_PROXY_BASE": "/service/spark"
   },
-  "cmd": "mv /mnt/mesos/sandbox/log4j.properties conf/log4j.properties && ./bin/spark-class org.apache.spark.deploy.mesos.MesosClusterDispatcher --port $PORT0 --webui-port $PORT1 --master mesos://zk://172.31.52.231:2181/mesos --zk 172.31.52.231:2181 --host $HOST --name spark-1-4-1",
+  "cmd": "cp ./conf/log4j.properties.template ./conf/log4j.properties && ./bin/spark-class org.apache.spark.deploy.mesos.MesosClusterDispatcher --port $PORT0 --webui-port $PORT1 --master mesos://zk://172.31.52.231:2181/mesos --zk 172.31.52.231:2181 --host $HOST --name spark-1-5-0",
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "mesosphere/spark:1.4.1-hdfs",
+      "image": "sdemyanov/mesos-spark:latest",
       "network": "HOST",
       "privileged": false,
       "parameters": [],
@@ -32,8 +32,5 @@
       "timeoutSeconds": 10,
       "maxConsecutiveFailures": 3
     }
-  ],
-  "uris": [
-    "http://downloads.mesosphere.com.s3.amazonaws.com/assets/spark/log4j.properties"
   ]
 }
